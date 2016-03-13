@@ -1,15 +1,20 @@
 # Arch Linux Configuration Guide
 
 My configuration guide for Arch Linux.
+
 I create it to remember all things to do to configure system after install.
+
 Initial conditions assuming things set up:
 - Arch Linux itself
 - X Window Server and Gnome DE
 - user with sudo rights and home folder
+
 Notice that some of instructions are incompatible to KDE, XFCE and other DEs.
+
 *Beware to just copy and paste commands and revise to Arch Wiki in relation to unique parameters of your system.*
 
 ## Add new repositories to pacman
+
 - archlinuxfr
 - multilib
 
@@ -17,6 +22,7 @@ Notice that some of instructions are incompatible to KDE, XFCE and other DEs.
 ...
 
 ## Install new packages
+
 My set of packages listed below.
 
 Official:
@@ -29,8 +35,12 @@ AUR:
 $ yaourt -S google-chrome chrome-gnome-shell-git slack-desktop gimp-plugin-saveforweb yandex-browser-beta
 ```
 
-## Install Gnome shell extensions from [https://extensions.gnome.org](https://extensions.gnome.org) (interactive install should be support in Chrome by previuosly installed `chrome-gnome-shell-git`).
+## Install Gnome shell extensions
+
+Install Gnome shell extensions from [https://extensions.gnome.org](https://extensions.gnome.org). Interactive install should be support in Chrome by previuosly installed `chrome-gnome-shell-git`).
+
 My list of extensions:
+
 - Arch linux updates indicator
 - Caffeine
 - Dash to dock
@@ -40,11 +50,17 @@ My list of extensions:
 - Topicons plus
 
 ## Setup proper resolution for GDM login screen
-Copy file monitors.xml (symlink will not work):
-$ sudo cp ${HOME}/.config/monitors.xml /var/lib/gdm/.config/monitors.xml
 
-Then edit /etc/gdm/custom.conf (because of bug of Wayland which ignores monitors.xml):
+Copy file `monitors.xml` (symlink will not work):
+
+```bash
+$ sudo cp ${HOME}/.config/monitors.xml /var/lib/gdm/.config/monitors.xml
+```
+
+Then edit `/etc/gdm/custom.conf` (because of bug of Wayland which ignores `monitors.xml`):
+```
 WaylandEnable=false
+```
 
 Configure X server access permission:
 $ xhost +SI:localuser:gdm
