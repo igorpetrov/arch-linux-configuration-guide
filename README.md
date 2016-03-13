@@ -26,16 +26,11 @@ Server = http://repo.archlinux.fr/$arch
 Include = /etc/pacman.d/mirrorlist
 ```
 
+## Install yaourt
+
 ```bash
 $ sudo pacman -Sy yaourt
 ```
-
-- archlinuxfr
-- multilib
-
-## Install yaourt
-
-...
 
 ## Install new packages
 
