@@ -40,7 +40,7 @@ $ yaourt -S google-chrome chrome-gnome-shell-git slack-desktop gimp-plugin-savef
 
 ## Install Gnome shell extensions
 
-Install Gnome shell extensions from [https://extensions.gnome.org](https://extensions.gnome.org). Interactive install should be support in Chrome by previuosly installed `chrome-gnome-shell-git`.
+Install Gnome shell extensions from [https://extensions.gnome.org](https://extensions.gnome.org). In Chrome Interactive installation support by previuosly installed `chrome-gnome-shell-git`.
 
 My list of extensions:
 
