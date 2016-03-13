@@ -14,7 +14,7 @@ Note that some of instructions are incompatible to KDE, XFCE and other DEs.
 
 *Beware to just copy and paste commands and revise to Arch Wiki in relation to unique parameters of your system.*
 
-## Install `yaourt` from archlinuxfr repository
+## Install yaourt
 
 Edit `/etc/pacman.conf`:
 
@@ -27,7 +27,7 @@ Server = http://repo.archlinux.fr/$arch
 Sync package database:
 
 ```bash
-$ sudo pacman -Sy
+$ sudo pacman -Syu
 ```
 Install package:
 
@@ -152,7 +152,7 @@ $ sudo pacman-key --lsign-key 962DDE58
 Sync package database:
 
 ```bash
-$ sudo pacman -Sy
+$ sudo pacman -Syu
 ```
 
 Install infinality:
