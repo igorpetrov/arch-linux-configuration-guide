@@ -14,7 +14,7 @@ Note that some of instructions are incompatible to KDE, XFCE and other DEs.
 
 *Beware to just copy and paste commands and revise to Arch Wiki in relation to unique parameters of your system.*
 
-## Add new repositories to `pacman`
+## Install `yaourt` from archlinuxfr repository
 
 Edit `/etc/pacman.conf`:
 
@@ -22,9 +22,6 @@ Edit `/etc/pacman.conf`:
 [archlinuxfr]
 SigLevel = Never
 Server = http://repo.archlinux.fr/$arch
-
-[multilib]
-Include = /etc/pacman.d/mirrorlist
 ```
 
 Sync package database:
@@ -32,8 +29,7 @@ Sync package database:
 ```bash
 $ sudo pacman -Sy
 ```
-
-## Install `yaourt` from archlinuxfr repository
+Install package:
 
 ```bash
 $ sudo pacman -S yaourt
