@@ -2,7 +2,7 @@
 
 My configuration guide for Arch Linux.
 
-I create it just to remember all things to do to configure system after fresh install.
+I'd created it just to remember all things to do to configure system after fresh install.
 
 Initial conditions assuming things set up:
 - Arch Linux itself
@@ -92,7 +92,7 @@ Sources:
 
 [https://wiki.archlinux.org/index.php/Swap#Swappiness](https://wiki.archlinux.org/index.php/Swap#Swappiness)
 
-## Enable TRIM operation for SSD
+## Automate TRIM operation for SSD
 
 Enable TRIM via timer (will activate weekly):
 
@@ -149,7 +149,8 @@ Then reboot.
 
 My fonts congiguration for Gnome Tweak Tool:
 
-
+| Setting       | Value                    |
+|---------------|--------------------------|
 | Window Titles | Ubuntu Bold 11           |
 | Interface     | Ubuntu Regular 11        |
 | Documents     | Sans Regular 11          |
