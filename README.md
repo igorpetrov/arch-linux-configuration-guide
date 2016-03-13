@@ -40,7 +40,7 @@ $ yaourt -S google-chrome chrome-gnome-shell-git slack-desktop gimp-plugin-savef
 
 ## Install Gnome shell extensions
 
-Install Gnome shell extensions from [https://extensions.gnome.org](https://extensions.gnome.org). In Chrome Interactive installation support by previuosly installed `chrome-gnome-shell-git`.
+Install Gnome shell extensions from [https://extensions.gnome.org](https://extensions.gnome.org). In Chrome Interactive installation supported by previuosly installed `chrome-gnome-shell-git`.
 
 My list of extensions:
 
@@ -72,7 +72,7 @@ Configure X server access permission:
 $ xhost +SI:localuser:gdm
 ```
 
-*I use it to enable tap-to-click for my touchpad but actually I don't know what else this setting do. Read Arch Wiki: [https://wiki.archlinux.org/index.php/GDM#Enabling_tap-to-click](https://wiki.archlinux.org/index.php/GDM#Enabling_tap-to-click}.*
+*I use it to enable tap-to-click for my touchpad but actually I don't know what else this setting do. Read Arch Wiki: [https://wiki.archlinux.org/index.php/GDM#Enabling_tap-to-click](https://wiki.archlinux.org/index.php/GDM#Enabling_tap-to-click).*
 
 Sources:
 
