@@ -2,7 +2,7 @@
 
 My configuration guide for Arch Linux.
 
-I'd created it just to remember all things to do to configure system after fresh install.
+I'd created it just to remember things to do to configure system after fresh install.
 
 Initial conditions assuming things set up:
 
@@ -10,11 +10,11 @@ Initial conditions assuming things set up:
 - X Window Server and Gnome DE
 - user with sudo rights and home folder
 
-Notice that some of instructions are incompatible to KDE, XFCE and other DEs.
+Note that some of instructions are incompatible to KDE, XFCE and other DEs.
 
 *Beware to just copy and paste commands and revise to Arch Wiki in relation to unique parameters of your system.*
 
-## Add new repositories to pacman
+## Add new repositories to `pacman`
 
 Edit `/etc/pacman.conf`:
 
@@ -27,15 +27,19 @@ Server = http://repo.archlinux.fr/$arch
 Include = /etc/pacman.d/mirrorlist
 ```
 
-## Install yaourt from archlinuxfr repository
+Sync package database:
+
+```bash
+$ sudo pacman -Sy
+```
+
+## Install `yaourt` from archlinuxfr repository
 
 ```bash
 $ sudo pacman -S yaourt
 ```
 
 ## Install new packages
-
-My set of packages listed below.
 
 Official:
 
@@ -46,7 +50,7 @@ $ sudo pacman -S linux-headers firefox thunderbird pidgin skype gnome-tweak-tool
 AUR:
 
 ```bash
-$ yaourt -S google-chrome chrome-gnome-shell-git slack-desktop gimp-plugin-saveforweb yandex-browser-beta
+$ yaourt -S google-chrome chrome-gnome-shell-git slack-desktop gimp-plugin-saveforweb yandex-browser-beta jre
 ```
 
 ## Install Gnome shell extensions
@@ -65,7 +69,7 @@ My list of extensions:
 
 ## Setup proper resolution for GDM login screen
 
-Copy file `monitors.xml` (symlink will not work):
+Copy file `monitors.xml` (symlink will not work because of rights):
 
 ```bash
 $ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/monitors.xml
@@ -77,13 +81,13 @@ Then edit `/etc/gdm/custom.conf` (because of Wayland bug which ignores `monitors
 WaylandEnable=false
 ```
 
-Configure X server access permission:
+Configure X Server access permission:
 
 ```
 $ xhost +SI:localuser:gdm
 ```
 
-*I use it to enable tap-to-click for my touchpad but actually I don't know what else this setting do. Read Arch Wiki: [https://wiki.archlinux.org/index.php/GDM#Enabling_tap-to-click](https://wiki.archlinux.org/index.php/GDM#Enabling_tap-to-click).*
+*It shares some X settings with GDM such as tap-to-click for touchpad and suspend behavior. Arch Wiki: [https://wiki.archlinux.org/index.php/GDM#Enabling_tap-to-click](https://wiki.archlinux.org/index.php/GDM#Enabling_tap-to-click).*
 
 Sources:
 
@@ -149,6 +153,12 @@ $ sudo pacman-key -r 962DDE58
 $ sudo pacman-key --lsign-key 962DDE58
 ```
 
+Sync package database:
+
+```bash
+$ sudo pacman -Sy
+```
+
 Install infinality:
 
 ```bash
@@ -173,9 +183,7 @@ Sources:
 
 ## Alternate way to improve fonts rendering
 
-Place code in .fonts.conf
-
-... (provide code)
+Place file [.fonts.conf](.fonts.conf) in home directory, then reboot.
 
 Sources:
 
@@ -209,12 +217,12 @@ vboxnetflt
 vboxpci
 ```
 
-Then reboot or load Virtualbox modules in current session:
+Then reboot or load Virtualbox modules in current kernel session:
 ```bash
 $ modprobe vboxdrv vboxnetadp vboxnetflt vboxpci
 ```
 
-When virtual machine will run choose "Devices" and then "Insert Guest additions CD image". Inside guest OS (assuming it's Windows)install Guest addidtions when promted.
+When virtual machine will be running choose "Devices" and then "Insert Guest additions CD image". Inside guest OS (assuming it's Windows) install Guest addidtions when promted.
 
 Sources:
 
