@@ -15,6 +15,21 @@ Notice that some of instructions are incompatible to KDE, XFCE and other DEs.
 
 ## Add new repositories to pacman
 
+Edit `/etc/pacman.conf`:
+
+```
+[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+```
+
+```bash
+$ sudo pacman -Sy yaourt
+```
+
 - archlinuxfr
 - multilib
 
@@ -147,7 +162,7 @@ $ sudo pacman -Syy infinality-bundle-multilib
 
 Then reboot.
 
-My fonts congiguration for Gnome Tweak Tool:
+My fonts configuration for Gnome Tweak Tool:
 
 | Setting       | Value                    |
 |---------------|--------------------------|
