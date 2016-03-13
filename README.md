@@ -5,6 +5,7 @@ My configuration guide for Arch Linux.
 I'd created it just to remember all things to do to configure system after fresh install.
 
 Initial conditions assuming things set up:
+
 - Arch Linux itself
 - X Window Server and Gnome DE
 - user with sudo rights and home folder
@@ -26,10 +27,10 @@ Server = http://repo.archlinux.fr/$arch
 Include = /etc/pacman.d/mirrorlist
 ```
 
-## Install yaourt
+## Install yaourt from archlinuxfr repository
 
 ```bash
-$ sudo pacman -Sy yaourt
+$ sudo pacman -S yaourt
 ```
 
 ## Install new packages
@@ -50,7 +51,7 @@ $ yaourt -S google-chrome chrome-gnome-shell-git slack-desktop gimp-plugin-savef
 
 ## Install Gnome shell extensions
 
-Install Gnome shell extensions from [https://extensions.gnome.org](https://extensions.gnome.org). In Chrome Interactive installation supported by previuosly installed `chrome-gnome-shell-git`.
+Install Gnome shell extensions from [https://extensions.gnome.org](https://extensions.gnome.org). In Chrome interactive installation provided by previously installed `chrome-gnome-shell-git`.
 
 My list of extensions:
 
@@ -67,10 +68,10 @@ My list of extensions:
 Copy file `monitors.xml` (symlink will not work):
 
 ```bash
-$ sudo cp ${HOME}/.config/monitors.xml /var/lib/gdm/.config/monitors.xml
+$ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/monitors.xml
 ```
 
-Then edit `/etc/gdm/custom.conf` (because of bug of Wayland which ignores `monitors.xml`):
+Then edit `/etc/gdm/custom.conf` (because of Wayland bug which ignores `monitors.xml`):
 
 ```
 WaylandEnable=false
@@ -151,8 +152,7 @@ $ sudo pacman-key --lsign-key 962DDE58
 Install infinality:
 
 ```bash
-$ sudo pacman -Syy infinality-bundle
-$ sudo pacman -Syy infinality-bundle-multilib
+$ sudo pacman -S infinality-bundle infinality-bundle-multilib
 ```
 
 Then reboot.
@@ -214,7 +214,7 @@ Then reboot or load Virtualbox modules in current session:
 $ modprobe vboxdrv vboxnetadp vboxnetflt vboxpci
 ```
 
-When virtual machine is running (assuming it's Windows) choose "Devices" and then "Insert Guest additions CD image". Inside guest OS install Guest addidtions when promted.
+When virtual machine will run choose "Devices" and then "Insert Guest additions CD image". Inside guest OS (assuming it's Windows)install Guest addidtions when promted.
 
 Sources:
 
