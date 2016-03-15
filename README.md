@@ -10,7 +10,7 @@ Initial conditions assuming things set up:
 - X Window Server and Gnome DE
 - user with sudo rights and home folder
 
-Note that some of instructions are incompatible to KDE, XFCE and other DEs.
+Note that some instructions are incompatible to KDE, XFCE and other DEs.
 
 *Beware to just copy and paste commands and revise to Arch Wiki in relation to unique parameters of your system.*
 
@@ -46,7 +46,7 @@ $ sudo pacman -S linux-headers firefox thunderbird pidgin skype gnome-tweak-tool
 AUR:
 
 ```bash
-$ yaourt -S google-chrome chrome-gnome-shell-git slack-desktop gimp-plugin-saveforweb yandex-browser-beta jre
+$ yaourt -S google-chrome chrome-gnome-shell-git slack-desktop gimp-plugin-saveforweb yandex-browser-beta jre downgrade
 ```
 
 ## Install Gnome shell extensions
