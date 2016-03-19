@@ -60,7 +60,7 @@ My list of extensions:
 - Pidgin IM integration
 - Skype integration
 - Topicons plus
-- Freon (Dell laptops needs i8kutils, see below)
+- Freon
 
 ## Setup proper resolution for GDM login screen
 
@@ -225,41 +225,3 @@ When virtual machine will be running choose "Devices" and then "Insert Guest add
 Sources:
 
 [https://wiki.archlinux.org/index.php/VirtualBox](https://wiki.archlinux.org/index.php/VirtualBox)
-
-## Setup i8kutils (fan control for Dell laptops)
-
-Install package:
-
-```bash
-$ sudo pacman -S i8kutils
-```
-
-Create `/etc/modules-load.d/i8k.conf`:
-
-```
-i8k
-```
-
-This will load `i8k` module on system boot.
-
-Then create `/etc/modprobe.d/i8k.conf`:
-
-```
-options i8k force=1
-```
-
-This will load `i8k` module with parameter `force`.
-
-Copy sample config file `/etc/i8kutils/i8kmon.conf` to `/etc/i8kmon.conf` and edit following [this tread](http://ubuntuforums.org/showthread.php?t=842775). My settings for fan control:
-
-```
-set config(0)   {{- 0}  -1  50  -1  50}
-set config(1)   {{- 1}  55  65  60  65}
-set config(2)   {{- 2}  70  80  75  80}
-```
-
-Sources:
-
-[http://ubuntuforums.org/showthread.php?t=842775](http://ubuntuforums.org/showthread.php?t=842775)
-
-[https://wiki.archlinux.org/index.php/kernel_modules](https://wiki.archlinux.org/index.php/kernel_modules)
