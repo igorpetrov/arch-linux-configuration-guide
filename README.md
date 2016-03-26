@@ -53,9 +53,7 @@ Install Gnome shell extensions from [https://extensions.gnome.org](https://exten
 
 My list of extensions:
 
-```
 `Arch linux updates indicator`, `Autohide battery`, `Battery percentage`, `Caffeine`, `Clipboard indicator`, `Dash to dock`, `Disconnect wifi`, `Freon`, `Media player indicator`, `No topleft hot corner`, `Notifications alert`, `Pidgin im integration`, `Places status indicator` `Refresh wifi connections`, `Removable Drive menu`, `Remove dropdown arrows`, `Services systemd`, `Skype integration`, `Straight top bar`, `Topicons plus`, `Transcode app search`, `Windowoverlay icons`
-```
 
 ## Setup default applications
 
