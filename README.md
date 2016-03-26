@@ -14,7 +14,7 @@ Note that some instructions are incompatible to KDE, XFCE and other DEs.
 
 ## Install yaourt
 
-Edit `/etc/pacman.conf`:
+Uncomment following strings in `/etc/pacman.conf`:
 
 ```
 [archlinuxfr]
@@ -53,14 +53,25 @@ Install Gnome shell extensions from [https://extensions.gnome.org](https://exten
 
 My list of extensions:
 
-- Arch linux updates indicator
-- Caffeine
-- Dash to dock
-- No topleft hot corner
-- Pidgin IM integration
-- Skype integration
-- Topicons plus
-- Freon
+```
+`Arch linux updates indicator`, `Autohide battery`, `Battery percentage`, `Caffeine`, `Clipboard indicator`, `Dash to dock`, `Disconnect wifi`, `Freon`, `Media player indicator`, `No topleft hot corner`, `Notifications alert`, `Pidgin im integration`, `Places status indicator` `Refresh wifi connections`, `Removable Drive menu`, `Remove dropdown arrows`, `Services systemd`, `Skype integration`, `Straight top bar`, `Topicons plus`, `Transcode app search`, `Windowoverlay icons`
+```
+
+## Setup default applications
+
+```bash
+$ yaourt -S gnome-defaults-list
+```
+
+Copy and edit MIME-list:
+
+```bash
+$ cp /etc/gnome/defaults.list ~/.local/share/applications/mimeapps.list
+```
+
+Sources:
+
+[https://wiki.archlinux.org/index.php/default_applications](https://wiki.archlinux.org/index.php/default_applications)
 
 ## Setup proper resolution for GDM login screen
 
@@ -162,15 +173,6 @@ $ sudo pacman -S infinality-bundle infinality-bundle-multilib
 
 Then reboot.
 
-My fonts configuration for Gnome Tweak Tool:
-
-| Setting       | Value                    |
-|---------------|--------------------------|
-| Window Titles | Ubuntu Bold 11           |
-| Interface     | Ubuntu Regular 11        |
-| Documents     | Sans Regular 11          |
-| Monospace     | DejaVu Sans Mono Book 13 |
-
 Sources:
 
 [https://wiki.archlinux.org/index.php/Infinality](https://wiki.archlinux.org/index.php/Infinality)
@@ -221,6 +223,12 @@ $ modprobe vboxdrv vboxnetadp vboxnetflt vboxpci
 ```
 
 When virtual machine will be running choose "Devices" and then "Insert Guest additions CD image". Inside guest OS (assuming it's Windows) install Guest addidtions when promted.
+
+To be able to use USB ports inside guest OS add current user to `vboxusers` group:
+
+```bash
+$ sudo gpasswd -a $USER vboxusers
+```
 
 Sources:
 
