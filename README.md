@@ -49,11 +49,11 @@ $ yaourt -S google-chrome chrome-gnome-shell-git slack-desktop gimp-plugin-savef
 
 ## Install Gnome shell extensions
 
-Install Gnome shell extensions from [https://extensions.gnome.org](https://extensions.gnome.org). In Chrome interactive installation provided by previously installed `chrome-gnome-shell-git`.
+Install Gnome shell extensions from [https://extensions.gnome.org](https://extensions.gnome.org). Interactive installation via Chrome provided by `chrome-gnome-shell-git`.
 
 My list of extensions:
 
-`Arch linux updates indicator`, `Autohide battery`, `Battery percentage`, `Caffeine`, `Clipboard indicator`, `Dash to dock`, `Disconnect wifi`, `Freon`, `Media player indicator`, `No topleft hot corner`, `Notifications alert`, `Pidgin im integration`, `Places status indicator` `Refresh wifi connections`, `Removable Drive menu`, `Remove dropdown arrows`, `Services systemd`, `Skype integration`, `Straight top bar`, `Topicons plus`, `Transcode app search`, `Windowoverlay icons`
+`Arch linux updates indicator`, `Autohide battery`, `Battery percentage`, `Caffeine`, `Clipboard indicator`, `Dash to dock`, `Disconnect wifi`, `Freon`, `Media player indicator`, `No topleft hot corner`, `Notifications alert`, `Pidgin im integration`, `Places status indicator` `Refresh wifi connections`, `Removable drive menu`, `Remove dropdown arrows`, `Services systemd`, `Skype integration`, `Straight top bar`, `Topicons plus`, `Transcode app search`, `Windowoverlay icons`
 
 ## Setup default applications
 
