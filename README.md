@@ -231,3 +231,26 @@ $ sudo gpasswd -a $USER vboxusers
 Sources:
 
 [https://wiki.archlinux.org/index.php/VirtualBox](https://wiki.archlinux.org/index.php/VirtualBox)
+
+## Setup printers
+
+Install packages:
+
+```bash
+$ sudo pacman -S cups ghostscript gsfonts system-config-printer
+```
+
+Start and enable CUPS service:
+
+```bash
+$ sudo systemctl start org.cups.cupsd.service
+$ sudo systemctl enable org.cups.cupsd.service
+```
+
+Then configure printers via Gnome settings.
+
+Sources:
+
+[https://wiki.archlinux.org/index.php/CUPS](https://wiki.archlinux.org/index.php/CUPS)
+
+[https://bbs.archlinux.org/viewtopic.php?id=200334](https://bbs.archlinux.org/viewtopic.php?id=200334)
