@@ -203,7 +203,7 @@ Enable dkms.service to recompile Virtualbox kernel modules each time dkms has be
 $ sudo systemctl enable dkms.service
 ```
 
-*DKMS service seems not to be available anymore, maybe now it running not via systemd.*
+**DKMS service seems not to be available anymore, maybe now it running not via systemd.*
 
 Create `/etc/modules-load.d/virtualbox.conf`:
 
