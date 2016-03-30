@@ -198,10 +198,12 @@ Generate Virtualbox kernel modules:
 $ sudo dkms autoinstall
 ```
 
-(?) Enable dkms.service to recompile Virtualbox kernel modules each time dkms has been upgraded:
+Enable dkms.service to recompile Virtualbox kernel modules each time dkms has been upgraded:
 ```bash
 $ sudo systemctl enable dkms.service
 ```
+
+*DKMS service seems not to be available anymore, maybe now it running not via systemd.*
 
 Create `/etc/modules-load.d/virtualbox.conf`:
 
@@ -252,5 +254,7 @@ Then configure printers via Gnome settings.
 Sources:
 
 [https://wiki.archlinux.org/index.php/CUPS](https://wiki.archlinux.org/index.php/CUPS)
+
+[https://wiki.archlinux.org/index.php/CUPS/Printer-specific_problems](https://wiki.archlinux.org/index.php/CUPS/Printer-specific_problems)
 
 [https://bbs.archlinux.org/viewtopic.php?id=200334](https://bbs.archlinux.org/viewtopic.php?id=200334)
