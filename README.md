@@ -10,8 +10,6 @@ Initial conditions assuming things set up:
 - X Window Server and Gnome DE
 - user with sudo rights and home folder
 
-Note that some instructions are incompatible to KDE, XFCE and other DEs.
-
 ## Install yaourt
 
 Uncomment following strings in `/etc/pacman.conf`:
@@ -38,13 +36,13 @@ $ sudo pacman -S yaourt
 Official:
 
 ```bash
-$ sudo pacman -S linux-headers firefox thunderbird pidgin skype gnome-tweak-tool dropbox nautilus-dropbox gimp sublime-text-dev vlc vim
+$ sudo pacman -S linux-headers chromium firefox thunderbird pidgin skype gnome-tweak-tool dropbox nautilus-dropbox gimp sublime-text-dev vlc vim
 ```
 
 AUR:
 
 ```bash
-$ yaourt -S google-chrome chrome-gnome-shell-git slack-desktop gimp-plugin-saveforweb yandex-browser-beta jre downgrade
+$ yaourt -S chrome-gnome-shell-git chromium-pepper-flash chromium-widevine slack-desktop gimp-plugin-saveforweb yandex-browser-beta jre downgrade
 ```
 
 ## Install Gnome shell extensions
@@ -258,3 +256,23 @@ Sources:
 [https://wiki.archlinux.org/index.php/CUPS/Printer-specific_problems](https://wiki.archlinux.org/index.php/CUPS/Printer-specific_problems)
 
 [https://bbs.archlinux.org/viewtopic.php?id=200334](https://bbs.archlinux.org/viewtopic.php?id=200334)
+
+# Yandex browser
+
+If `google-chrome` installed then Flash will work out of the box. If not, additional configuration required.
+
+Install packages:
+
+```bash
+$ yaourt -S chromium-pepper-flash
+```
+
+Edit `/opt/yandex/browser-beta/yandex-browser-beta` (before `$@` in last line):
+
+```bash
+--ppapi-flash-path=/usr/lib/PepperFlash/libpepflashplayer.so
+```
+
+Sources:
+
+[https://bbs.archlinux.org/viewtopic.php?id=191773](https://bbs.archlinux.org/viewtopic.php?id=191773)
