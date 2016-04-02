@@ -257,7 +257,7 @@ Sources:
 
 [https://bbs.archlinux.org/viewtopic.php?id=200334](https://bbs.archlinux.org/viewtopic.php?id=200334)
 
-# Yandex browser
+## Setup Flash in Yandex browser
 
 If `google-chrome` installed then Flash will work out of the box. If not, additional configuration required.
 
