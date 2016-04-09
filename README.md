@@ -42,7 +42,7 @@ $ sudo pacman -S linux-headers chromium firefox thunderbird pidgin skype gnome-t
 AUR:
 
 ```bash
-$ yaourt -S chrome-gnome-shell-git chromium-pepper-flash chromium-widevine slack-desktop gimp-plugin-saveforweb yandex-browser-beta jre downgrade
+$ yaourt -S chrome-gnome-shell-git chromium-pepper-flash chromium-widevine vivaldi vivaldi-ffmpeg-codecs slack-desktop gimp-plugin-saveforweb yandex-browser-beta jre downgrade
 ```
 
 ## Install Gnome shell extensions
@@ -69,15 +69,15 @@ Sources:
 
 [https://wiki.archlinux.org/index.php/default_applications](https://wiki.archlinux.org/index.php/default_applications)
 
-## Setup proper resolution for GDM login screen
+## Configure GDM login screen
 
-Copy file `monitors.xml` (symlink will not work because of rights):
+Copy `monitors.xml`:
 
 ```bash
 $ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/monitors.xml
 ```
 
-Then edit `/etc/gdm/custom.conf` (because of Wayland bug which ignores `monitors.xml`):
+Then edit `/etc/gdm/custom.conf` (because of Wayland which ignores `monitors.xml`):
 
 ```
 WaylandEnable=false
@@ -85,17 +85,31 @@ WaylandEnable=false
 
 Configure X Server access permission:
 
-```
+```bash
 $ xhost +SI:localuser:gdm
 ```
 
-*It shares some X settings with GDM such as tap-to-click for touchpad and suspend behavior. Arch Wiki: [https://wiki.archlinux.org/index.php/GDM#Enabling_tap-to-click](https://wiki.archlinux.org/index.php/GDM#Enabling_tap-to-click).*
+This will share some X settings with GDM, such as tap-to-click for touchpad and suspend behavior.
+
+Then enter `gdm` user shell:
+
+```bash
+$ sudo su gdm -s /bin/bash
+$ gsettings set org.gnome.desktop.interface gtk-theme GTK3_THEME
+$ gsettings set org.gnome.desktop.interface icon-theme ICON_THEME
+$ gsettings set org.gnome.desktop.interface cursor-theme CURSOR_THEME
+$ gsettings set org.gnome.desktop.background picture-uri 'file://FILE'
+```
 
 Sources:
 
 [https://bbs.archlinux.org/viewtopic.php?id=196219](https://bbs.archlinux.org/viewtopic.php?id=196219)
 
 [https://bugzilla.redhat.com/show_bug.cgi?id=1184617](https://bugzilla.redhat.com/show_bug.cgi?id=1184617)
+
+[https://wiki.archlinux.org/index.php/GDM#Enabling_tap-to-click](https://wiki.archlinux.org/index.php/GDM#Enabling_tap-to-click)
+
+[http://askubuntu.com/questions/52463/how-to-set-gtk-style-and-background-in-gdm3](http://askubuntu.com/questions/52463/how-to-set-gtk-style-and-background-in-gdm3)
 
 ## Swapiness
 
@@ -267,7 +281,7 @@ Install packages:
 $ yaourt -S chromium-pepper-flash
 ```
 
-Edit `/opt/yandex/browser-beta/yandex-browser-beta` (before `$@` in last line):
+Edit `/opt/yandex/browser-beta/yandex-browser-beta` (insert before `$@` in last line):
 
 ```bash
 --ppapi-flash-path=/usr/lib/PepperFlash/libpepflashplayer.so
