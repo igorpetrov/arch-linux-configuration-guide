@@ -36,7 +36,7 @@ $ sudo pacman -S yaourt
 Official:
 
 ```bash
-$ sudo pacman -S linux-headers chromium firefox thunderbird pidgin skype gnome-tweak-tool dropbox nautilus-dropbox gimp sublime-text-dev vlc vim
+$ sudo pacman -S linux-headers chromium firefox thunderbird pidgin skype gnome-tweak-tool dropbox nautilus-dropbox gimp sublime-text-dev vlc vim dosfstools
 ```
 
 AUR:
@@ -290,3 +290,20 @@ Edit `/opt/yandex/browser-beta/yandex-browser-beta` (insert before `$@` in last 
 Sources:
 
 [https://bbs.archlinux.org/viewtopic.php?id=191773](https://bbs.archlinux.org/viewtopic.php?id=191773)
+
+## Setup Intel CPU microcode
+
+Install packages:
+
+```bash
+$ sudo pacman -S intel-ucode
+```
+
+Then add new entry for `systemd-boot` (`/boot/loader/entries/arch.conf`):
+
+```
+initrd  /intel-ucode.img
+```
+
+Sources:
+[https://wiki.archlinux.org/index.php/microcode](https://wiki.archlinux.org/index.php/microcode)
