@@ -307,3 +307,15 @@ initrd  /intel-ucode.img
 
 Sources:
 [https://wiki.archlinux.org/index.php/microcode](https://wiki.archlinux.org/index.php/microcode)
+
+## Configure systemd log
+
+Retain log for last seven days:
+
+```bash
+$ sudo journalctl --vacuum-time=7d
+```
+
+Sources:
+
+[http://unix.stackexchange.com/a/194058](http://unix.stackexchange.com/a/194058)
