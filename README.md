@@ -181,7 +181,7 @@ Install infinality:
 $ sudo pacman -S infinality-bundle infinality-bundle-multilib
 ```
 
-Then reboot.
+Copy [infinality-settings.sh](https://github.com/bohoomil/fontconfig-ultimate/blob/master/freetype/infinality-settings.sh) to `/etc/profile.d/` and choose set of variables.
 
 Sources:
 
@@ -215,7 +215,7 @@ Enable dkms.service to recompile Virtualbox kernel modules each time dkms has be
 $ sudo systemctl enable dkms.service
 ```
 
-**DKMS service seems not to be available anymore, maybe now it running not via systemd.*
+**dkms.service seems not to be available anymore, maybe now it running not via systemd.*
 
 Create `/etc/modules-load.d/virtualbox.conf`:
 
@@ -231,7 +231,7 @@ This will load Virtualbox modules on system boot.
 Then reboot or load Virtualbox modules in current kernel session:
 
 ```bash
-$ modprobe vboxdrv vboxnetadp vboxnetflt vboxpci
+$ sudo modprobe vboxdrv vboxnetadp vboxnetflt vboxpci
 ```
 
 When virtual machine will be running choose "Devices" and then "Insert Guest additions CD image". Inside guest OS (assuming it's Windows) install Guest addidtions when promted.
