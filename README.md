@@ -137,18 +137,6 @@ Sources:
 
 ## Improve fonts rendering
 
-Install missing fonts:
-
-```bash
-$ sudo pacman -S ttf-bitstream-vera ttf-inconsolata ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-linux-libertine ttf-liberation
-```
-
-Disable bitmaps fonts:
-
-```bash
-$ sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
-```
-
 Edit `/etc/pacman.conf`:
 
 ```
@@ -160,6 +148,9 @@ Server = http://bohoomil.com/repo/$arch
 
 [infinality-bundle-multilib]
 Server = http://bohoomil.com/repo/multilib/$arch
+
+[infinality-bundle-fonts]
+Server = http://bohoomil.com/repo/fonts
 ```
 
 Sign infinality repository:
@@ -175,17 +166,30 @@ Sync package database:
 $ sudo pacman -Syu
 ```
 
+Install missing fonts:
+
+```bash
+$ sudo pacman -S ttf-bitstream-vera ttf-inconsolata ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-linux-libertine ttf-liberation
+```
+
+Disable bitmaps fonts:
+
+```bash
+$ sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
+```
+
 Install infinality:
 
 ```bash
 $ sudo pacman -S infinality-bundle infinality-bundle-multilib
 ```
 
-Copy [infinality-settings.sh](https://github.com/bohoomil/fontconfig-ultimate/blob/master/freetype/infinality-settings.sh) to `/etc/profile.d/` and choose set of variables.
+Copy [infinality-settings.sh](https://github.com/bohoomil/fontconfig-ultimate/blob/master/freetype/infinality-settings.sh) to `/etc/profile.d/` directory and choose set of variables.
 
 Sources:
 
 [https://wiki.archlinux.org/index.php/Infinality](https://wiki.archlinux.org/index.php/Infinality)
+
 [http://www.techrapid.co.uk/linux/arch-linux/improve-font-rendering-on-arch-linux/](http://www.techrapid.co.uk/linux/arch-linux/improve-font-rendering-on-arch-linux/)
 
 ## Alternate way to improve fonts rendering
